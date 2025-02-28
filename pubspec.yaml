@@ -39,6 +39,16 @@ dependencies:
   im_flutter_sdk: 
     path: ../../im_flutter_sdk
 
+  image_picker: 
+    git:
+      url: "https://gitee.com/openharmony-sig/flutter_packages.git"
+      path: "packages/image_picker/image_picker"
+
+  # flutter_sound: 
+  #   git:
+  #     url: "https://gitee.com/openharmony-sig/flutter_sound.git"
+  #     path: "flutter_sound"
+
 dev_dependencies:
   flutter_test:
     sdk: flutter

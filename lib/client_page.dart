@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:im_flutter_sdk/im_flutter_sdk.dart';
+import 'package:test_oh/chat_page.dart';
 import 'package:test_oh/group_page.dart';
 import 'package:test_oh/item_page.dart';
 
@@ -11,14 +12,23 @@ class ClientPage extends ItemsPage {
   List<Item>? get items => [
         Item(title: 'init', onTap: init),
         Item(title: 'login', onTap: login),
+        Item(title: 'logout', onTap: logout),
         Item(title: 'groupTest', nextPage: GroupPage()),
+        Item(title: 'chatTest', nextPage: ChatPage()),
       ];
 
   @override
   ListenerCallback? get addListenerCallback => (BuildContext ctx) {
         EMClient.getInstance.addConnectionEventHandler(
           'identifier',
-          EMConnectionEventHandler(),
+          EMConnectionEventHandler(
+            onConnected: () {
+              debugPrint('onConnected');
+            },
+            onDisconnected: () {
+              debugPrint('onDisconnected');
+            },
+          ),
         );
 
         EMClient.getInstance.addMultiDeviceEventHandler(
@@ -28,7 +38,10 @@ class ClientPage extends ItemsPage {
       };
 
   @override
-  ListenerCallback? get removeListenerCallback => (BuildContext ctx) {};
+  ListenerCallback? get removeListenerCallback => (BuildContext ctx) {
+        EMClient.getInstance.removeConnectionEventHandler('identifier');
+        EMClient.getInstance.removeMultiDeviceEventHandler('identifier');
+      };
 
   Future<void> init() async {
     try {
@@ -36,25 +49,19 @@ class ClientPage extends ItemsPage {
     } catch (e) {
       debugPrint(e.toString());
     }
-    EMClient.getInstance.chatManager.addMessageEvent(
-      'identifier',
-      ChatMessageEvent(
-        onSuccess: (msgId, msg) {
-          debugPrint('onSuccess: $msgId, $msg');
-        },
-        onError: (msgId, msg, e) {
-          debugPrint('onError: $msgId, $msg, $e');
-        },
-        onProgress: (progress, status) {
-          debugPrint('onProgress: $progress, $status');
-        },
-      ),
-    );
   }
 
   Future<void> login() async {
     try {
       await EMClient.getInstance.loginWithPassword('du001', '1');
+    } catch (e) {
+      debugPrint(e.toString());
+    }
+  }
+
+  Future<void> logout() async {
+    try {
+      await EMClient.getInstance.logout();
     } catch (e) {
       debugPrint(e.toString());
     }

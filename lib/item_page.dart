@@ -3,12 +3,14 @@ import 'package:test_oh/result_page.dart';
 
 typedef ListenerCallback = void Function(BuildContext ctx);
 typedef CallbackHandler = Future<Object?>? Function();
+typedef CallbackContentHandler = void Function(BuildContext ctx);
 
 class Item {
-  Item({required this.title, this.onTap, this.nextPage});
+  Item({required this.title, this.onTap, this.onContextTap, this.nextPage});
 
   final String title;
   final CallbackHandler? onTap;
+  final CallbackContentHandler? onContextTap;
   final ItemsPage? nextPage;
 }
 
@@ -33,10 +35,22 @@ class ItemsPage extends StatefulWidget {
 
 class ItemsPageState extends State<ItemsPage> {
   @override
+  void initState() {
+    super.initState();
+    widget.addListenerCallback?.call(context);
+  }
+
+  @override
+  void dispose() {
+    widget.removeListenerCallback?.call(context);
+    super.dispose();
+  }
+
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Flutter Demo'),
+        title: Text(widget.title ?? 'Items Page'),
       ),
       body: ListView(children: () {
         final List<Widget> children = [];
@@ -48,7 +62,9 @@ class ItemsPageState extends State<ItemsPage> {
                 child: ListTile(
                     title: Text(item.title),
                     onTap: () {
-                      if (item.onTap != null) {
+                      if (item.onContextTap != null) {
+                        item.onContextTap?.call(context);
+                      } else if (item.onTap != null) {
                         item.onTap!()?.then((value) {
                           if (value != null) {
                             Navigator.push(

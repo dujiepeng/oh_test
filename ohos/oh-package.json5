@@ -15,6 +15,9 @@
   "overrides": {
     "@ohos/flutter_ohos": "file:./har/flutter.har",
     "im_flutter_sdk": "file:./har/im_flutter_sdk.har",
-    "@ohos/flutter_module": "file:./entry"
+    "@ohos/flutter_module": "file:./entry",
+    "image_picker_ohos": "file:./har/image_picker_ohos.har",
+    "path_provider_ohos": "file:./har/path_provider_ohos.har",
+    "flutter_sound": "file:./har/flutter_sound.har"
   }
 }
