@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:im_flutter_sdk/im_flutter_sdk.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:test_oh/item_page.dart';
+import 'package:test_oh/translate_tool.dart';
 
 // ignore: must_be_immutable
 class ChatPage extends ItemsPage {
@@ -67,23 +68,23 @@ class ChatPage extends ItemsPage {
 
   List<Item> getItems() {
     final list = [
-      Item(title: 'send text', onTap: sendTextMessage),
-      Item(title: 'send cmd', onTap: sendCmdMessage),
-      Item(title: 'send local', onTap: sendLocalMessage),
-      Item(title: 'send custom', onTap: sendCustomMessage),
-      Item(title: 'send image', onContextTap: sendImageMessage),
-      Item(title: 'send file', onContextTap: sendFileMessage),
-      Item(title: 'send voice', onContextTap: sendVoiceMessage),
-      Item(title: 'resend message', onTap: resendMessage),
-      Item(title: 'ack message read', onTap: ackMessageRead),
-      Item(title: 'ack group message read', onTap: ackGroupMessageRead),
-      Item(title: 'ack conversation read', onTap: ackConversationRead),
-      Item(title: 'recall message', onTap: recallMessage),
-      Item(title: 'get conversation', onTap: getConversation),
-      Item(title: 'get thread conversation', onTap: getThreadConversation),
-      Item(title: 'mark all chat msg as read', onTap: markAllChatMsgAsRead),
-      Item(title: 'get unread message count', onTap: getUnreadMessageCount),
-      Item(title: 'update chat message', onTap: updateChatMessage),
+      Item(title: 'send text: Y', onTap: sendTextMessage),
+      Item(title: 'send cmd: Y', onTap: sendCmdMessage),
+      Item(title: 'send local: Y', onTap: sendLocalMessage),
+      Item(title: 'send custom: Y', onTap: sendCustomMessage),
+      Item(title: 'send image: Y', onContextTap: sendImageMessage),
+      Item(title: 'send file: Y', onContextTap: sendFileMessage),
+      Item(title: 'send voice: Y', onContextTap: sendVoiceMessage),
+      Item(title: 'resend message: Y', onTap: resendMessage),
+      Item(title: 'ack message read: Y', onTap: ackMessageRead),
+      Item(title: 'ack group message read: Y', onTap: ackGroupMessageRead),
+      Item(title: 'ack conversation read: Y', onTap: ackConversationRead),
+      Item(title: 'recall message: Y', onTap: recallMessage),
+      Item(title: 'get conversation: Y', onTap: getConversation),
+      Item(title: 'get thread conversation: X', onTap: getThreadConversation),
+      Item(title: 'mark all chat msg as read: Y', onTap: markAllChatMsgAsRead),
+      Item(title: 'get unread message count: X', onTap: getUnreadMessageCount),
+      Item(title: 'update chat message: X', onTap: updateChatMessage),
       Item(title: 'download attachment', onTap: downloadAttachment),
       Item(title: 'download thumbnail', onTap: downloadThumbnail),
       Item(
@@ -92,66 +93,67 @@ class ChatPage extends ItemsPage {
       Item(
           title: 'download message thumbnail in combine',
           onTap: downloadMessageThumbnailInCombine),
-      Item(title: 'import messages', onTap: importMessages),
-      Item(title: 'load all conversations', onTap: loadAllConversations),
+      Item(title: 'import messages: Y', onTap: importMessages),
+      Item(title: 'load all conversations: Y', onTap: loadAllConversations),
       Item(
           title: 'get conversations from server',
           onTap: getConversationsFromServer),
-      Item(title: 'delete conversation', onTap: deleteConversation),
+      Item(title: 'delete conversation: Y', onTap: deleteConversation),
       Item(title: 'fetch history messages', onTap: fetchHistoryMessages),
       Item(
-          title: 'fetch history messages by options',
+          title: 'fetch history messages by options: Y',
           onTap: fetchHistoryMessagesByOptions),
-      Item(title: 'search chat msg from DB', onTap: searchChatMsgFromDB),
-      Item(title: 'get message', onTap: getMessage),
+      Item(title: 'search chat msg from DB: Y', onTap: searchChatMsgFromDB),
+      Item(title: 'get message: Y', onTap: getMessage),
       Item(
-          title: 'async fetch group message ack from server',
+          title: 'fetch group message ack: Y',
           onTap: asyncFetchGroupMessageAckFromServer),
       Item(
-          title: 'delete remote conversation', onTap: deleteRemoteConversation),
+          title: 'delete remote conversation: Y',
+          onTap: deleteRemoteConversation),
       Item(title: 'delete messages before', onTap: deleteMessagesBefore),
       Item(title: 'translate message', onTap: translateMessage),
       Item(title: 'fetch supported languages', onTap: fetchSupportedLanguages),
-      Item(title: 'add reaction', onTap: addReaction),
-      Item(title: 'remove reaction', onTap: removeReaction),
-      Item(title: 'fetch reaction list', onTap: fetchReactionList),
-      Item(title: 'fetch reaction detail', onTap: fetchReactionDetail),
+      Item(title: 'add reaction: Y', onTap: addReaction),
+      Item(title: 'remove reaction: Y', onTap: removeReaction),
+      Item(title: 'fetch reaction list: Y', onTap: fetchReactionList),
+      Item(title: 'fetch reaction detail: oh err', onTap: fetchReactionDetail),
       Item(title: 'report message', onTap: reportMessage),
       Item(
           title: 'get conversations from server with page',
           onTap: getConversationsFromServerWithPage),
       Item(
-          title: 'remove messages from server with msg ids',
+          title: 'remove msgs from server with ids: Y',
           onTap: removeMessagesFromServerWithMsgIds),
       Item(
           title: 'remove messages from server with ts',
           onTap: removeMessagesFromServerWithTs),
       Item(
-          title: 'get conversations from server with cursor',
+          title: 'get conversations from server with cursor: Y',
           onTap: getConversationsFromServerWithCursor),
       Item(
-          title: 'get pinned conversations from server with cursor',
+          title: 'get pinned conversations from server with cursor: Y',
           onTap: getPinnedConversationsFromServerWithCursor),
-      Item(title: 'pin conversation', onTap: pinConversation),
-      Item(title: 'modify message', onTap: modifyMessage),
+      Item(title: 'pin conversation: Y', onTap: pinConversation),
+      Item(title: 'modify message: Y', onTap: modifyMessage),
       Item(
           title: 'download and parse combine message',
           onTap: downloadAndParseCombineMessage),
       Item(
-          title: 'add remote and local conversations mark',
+          title: 'add remote and local conversations mark: Y',
           onTap: addRemoteAndLocalConversationsMark),
       Item(
-          title: 'delete remote and local conversations mark',
+          title: 'delete remote and local conversations mark: Y',
           onTap: deleteRemoteAndLocalConversationsMark),
       Item(
-          title: 'fetch conversations by options',
+          title: 'fetch conversations by options: Y',
           onTap: fetchConversationsByOptions),
       Item(
           title: 'delete all message and conversation',
           onTap: deleteAllMessageAndConversation),
-      Item(title: 'pin message', onTap: pinMessage),
-      Item(title: 'unpin message', onTap: unpinMessage),
-      Item(title: 'fetch pinned messages', onTap: fetchPinnedMessages),
+      Item(title: 'pin message: Y', onTap: pinMessage),
+      Item(title: 'unpin message: Y', onTap: unpinMessage),
+      Item(title: 'fetch pinned messages: Y', onTap: fetchPinnedMessages),
       Item(title: 'search msg by options', onTap: searchMsgByOptions),
       Item(title: 'get message count', onTap: getMessageCount),
     ];
@@ -315,8 +317,12 @@ class ChatPage extends ItemsPage {
           await EMClient.getInstance.chatManager.getConversation('du002');
       final msgs = await conv?.loadMessages();
       if (msgs?.isNotEmpty == true) {
-        await EMClient.getInstance.chatManager.sendMessageReadAck(msgs!.first);
-        debugPrint('send read ack success');
+        await EMClient.getInstance.chatManager.sendGroupMessageReadAck(
+          msgs!.first.msgId,
+          'group_id',
+          content: 'hello',
+        );
+        debugPrint('send group read ack success');
       }
     } catch (e) {
       debugPrint(e.toString());
@@ -326,7 +332,7 @@ class ChatPage extends ItemsPage {
   Future<void> ackConversationRead() async {
     try {
       await EMClient.getInstance.chatManager.sendConversationReadAck('du002');
-      debugPrint('send read ack success');
+      debugPrint('send conversation read ack success');
     } catch (e) {
       debugPrint(e.toString());
     }
@@ -346,10 +352,22 @@ class ChatPage extends ItemsPage {
     final conv =
         await EMClient.getInstance.chatManager.getConversation('du002');
     debugPrint('conv: $conv');
-    return conv.toString();
+    return conv?.toJsonString();
   }
 
-  Future<void> getThreadConversation() async {}
+  Future<Object?> getThreadConversation() async {
+    try {
+      final conv =
+          await EMClient.getInstance.chatManager.getThreadConversation('du001');
+      if (conv != null) {
+        return conv.toJsonString();
+      }
+    } catch (e) {
+      return e.toString();
+    }
+
+    return null;
+  }
 
   Future<void> markAllChatMsgAsRead() async {
     try {
@@ -362,18 +380,31 @@ class ChatPage extends ItemsPage {
     }
   }
 
-  Future<void> getUnreadMessageCount() async {
+  Future<Object?> getUnreadMessageCount() async {
+    try {
+      final count =
+          await EMClient.getInstance.chatManager.getUnreadMessageCount();
+      debugPrint('unread message count: $count');
+      return count;
+    } catch (e) {
+      debugPrint(e.toString());
+    }
+    return null;
+  }
+
+  Future<void> updateChatMessage() async {
     try {
       final conv =
           await EMClient.getInstance.chatManager.getConversation('du002');
-      final count = conv?.unreadCount();
-      debugPrint('unread message count: $count');
+      final msg = await conv?.latestMessage();
+      msg?.body = EMTextMessageBody(content: 'updated');
+      await EMClient.getInstance.chatManager.updateMessage(msg!);
+      final newMsg = await conv?.latestMessage();
+      debugPrint('update message success: newMsg: ${newMsg.toString()}');
     } catch (e) {
       debugPrint(e.toString());
     }
   }
-
-  Future<void> updateChatMessage() async {}
 
   Future<void> downloadAttachment() async {}
 
@@ -383,7 +414,16 @@ class ChatPage extends ItemsPage {
 
   Future<void> downloadMessageThumbnailInCombine() async {}
 
-  Future<void> importMessages() async {}
+  Future<void> importMessages() async {
+    final msg =
+        EMMessage.createTxtSendMessage(targetId: 'du001', content: 'import');
+    try {
+      await EMClient.getInstance.chatManager.importMessages([msg]);
+      debugPrint('import messages success');
+    } catch (e) {
+      debugPrint(e.toString());
+    }
+  }
 
   Future<Object?> loadAllConversations() async {
     return await EMClient.getInstance.chatManager.loadAllConversations();
@@ -405,50 +445,218 @@ class ChatPage extends ItemsPage {
     debugPrint('delete conversation success');
   }
 
-  Future<void> fetchHistoryMessages() async {}
+  Future<void> fetchHistoryMessages() async {
+    try {
+      final result = await EMClient.getInstance.chatManager
+          .fetchHistoryMessages(conversationId: 'du002');
+      debugPrint('fetch history messages success $result');
+    } catch (e) {
+      debugPrint(e.toString());
+    }
+  }
 
-  Future<void> fetchHistoryMessagesByOptions() async {}
+  Future<void> fetchHistoryMessagesByOptions() async {
+    try {
+      final result =
+          await EMClient.getInstance.chatManager.fetchHistoryMessagesByOption(
+        'du002',
+        EMConversationType.Chat,
+        options: const FetchMessageOptions(
+          from: 'du001',
+          msgTypes: [MessageType.TXT, MessageType.IMAGE],
+          needSave: true,
+        ),
+      );
+      debugPrint('fetch history messages by options success $result');
+    } catch (e) {
+      debugPrint(e.toString());
+    }
+  }
 
-  Future<void> searchChatMsgFromDB() async {}
+  Future<Object?> searchChatMsgFromDB() async {
+    try {
+      final msgs =
+          await EMClient.getInstance.chatManager.loadMessagesWithKeyword(
+        'hello',
+        sender: 'du001',
+        count: 5,
+      );
+      debugPrint('search chat msg from DB success');
+      return msgs;
+    } catch (e) {
+      debugPrint(e.toString());
+    }
+    return null;
+  }
 
-  Future<void> getMessage() async {}
+  Future<Object?> getMessage() async {
+    try {
+      final msg = await EMClient.getInstance.chatManager
+          .loadMessage('1389028404531041756');
+      debugPrint('get message success $msg');
+      return msg;
+    } catch (e) {
+      debugPrint(e.toString());
+    }
+    return null;
+  }
 
-  Future<void> asyncFetchGroupMessageAckFromServer() async {}
+  Future<void> asyncFetchGroupMessageAckFromServer() async {
+    try {
+      await EMClient.getInstance.chatManager.fetchGroupAcks(
+        'group_id',
+        'msg_id',
+        startAckId: 'start_ack_id',
+      );
+      debugPrint('async fetch group message ack from server success');
+    } catch (e) {
+      debugPrint(e.toString());
+    }
+  }
 
-  Future<void> deleteRemoteConversation() async {}
+  Future<void> deleteRemoteConversation() async {
+    try {
+      await EMClient.getInstance.chatManager.deleteRemoteConversation('du002');
+      debugPrint('delete remote conversation success');
+    } catch (e) {
+      debugPrint(e.toString());
+    }
+  }
 
-  Future<void> deleteMessagesBefore() async {}
+  Future<void> deleteMessagesBefore() async {
+    try {
+      final timestamp = DateTime.now().millisecondsSinceEpoch;
+      await EMClient.getInstance.chatManager.deleteMessagesBefore(timestamp);
+      debugPrint('delete messages before success');
+    } catch (e) {
+      debugPrint(e.toString());
+    }
+  }
 
   Future<void> translateMessage() async {}
 
   Future<void> fetchSupportedLanguages() async {}
 
-  Future<void> addReaction() async {}
+  Future<void> addReaction() async {
+    try {
+      final msg = await EMClient.getInstance.chatManager
+          .loadMessage('1389030697259243096');
+      await EMClient.getInstance.chatManager.addReaction(
+        messageId: msg!.msgId,
+        reaction: 'like',
+      );
+      debugPrint('add reaction success');
+    } catch (e) {
+      debugPrint(e.toString());
+    }
+  }
 
-  Future<void> removeReaction() async {}
+  Future<void> removeReaction() async {
+    try {
+      final msg = await EMClient.getInstance.chatManager
+          .loadMessage('1389030697259243096');
+      await EMClient.getInstance.chatManager.removeReaction(
+        messageId: msg!.msgId,
+        reaction: 'like',
+      );
+      debugPrint('add reaction success');
+    } catch (e) {
+      debugPrint(e.toString());
+    }
+  }
 
-  Future<void> fetchReactionList() async {}
+  Future<void> fetchReactionList() async {
+    try {
+      final msg = await EMClient.getInstance.chatManager
+          .loadMessage('1389030697259243096');
+      await EMClient.getInstance.chatManager.fetchReactionList(
+        messageIds: [msg!.msgId],
+        chatType: ChatType.GroupChat,
+        groupId: 'group_id',
+      );
+      debugPrint('add reaction success');
+    } catch (e) {
+      debugPrint(e.toString());
+    }
+  }
 
-  Future<void> fetchReactionDetail() async {}
+  Future<Object?> fetchReactionDetail() async {
+    try {
+      final msg = await EMClient.getInstance.chatManager
+          .loadMessage('1389030697259243096');
+      final result = await EMClient.getInstance.chatManager.fetchReactionDetail(
+        messageId: msg!.msgId,
+        reaction: 'like',
+      );
+      debugPrint('add reaction success');
+      return result;
+    } catch (e) {
+      debugPrint(e.toString());
+    }
+    return null;
+  }
 
   Future<void> reportMessage() async {}
 
   Future<void> getConversationsFromServerWithPage() async {}
 
-  Future<void> removeMessagesFromServerWithMsgIds() async {}
+  Future<void> removeMessagesFromServerWithMsgIds() async {
+    try {
+      await EMClient.getInstance.chatManager.deleteRemoteMessagesWithIds(
+        conversationId: "du002",
+        type: EMConversationType.Chat,
+        msgIds: ["1388018655157028368"],
+      );
+      debugPrint('remove msgs from server with ids success');
+    } catch (e) {
+      debugPrint(e.toString());
+    }
+  }
 
   Future<void> removeMessagesFromServerWithTs() async {}
 
-  Future<void> getConversationsFromServerWithCursor() async {}
+  Future<Object?> getConversationsFromServerWithCursor() async {
+    try {
+      final result = await EMClient.getInstance.chatManager.fetchConversation(
+        cursor: "1",
+        pageSize: 10,
+      );
+      debugPrint('get conversations from server with cursor success $result');
+      return result;
+    } catch (e) {
+      debugPrint(e.toString());
+    }
+    return null;
+  }
 
-  Future<void> getPinnedConversationsFromServerWithCursor() async {}
+  Future<void> getPinnedConversationsFromServerWithCursor() async {
+    try {
+      final result =
+          await EMClient.getInstance.chatManager.fetchPinnedConversations(
+        cursor: "1",
+        pageSize: 10,
+      );
+      debugPrint(
+          'get pinned conversations from server with cursor success $result');
+    } catch (e) {
+      debugPrint(e.toString());
+    }
+  }
 
-  Future<void> pinConversation() async {}
+  Future<void> pinConversation() async {
+    try {
+      await EMClient.getInstance.chatManager
+          .pinConversation(conversationId: 'du002', isPinned: true);
+      debugPrint('pin conversation success');
+    } catch (e) {
+      debugPrint(e.toString());
+    }
+  }
 
   Future<void> modifyMessage() async {
     try {
       await EMClient.getInstance.chatManager.modifyMessage(
-          messageId: '1388018655157028368',
+          messageId: '1389065664206996932',
           msgBody: EMTextMessageBody(content: 'changed'));
       debugPrint('change message success');
     } catch (e) {
@@ -458,18 +666,48 @@ class ChatPage extends ItemsPage {
 
   Future<void> downloadAndParseCombineMessage() async {}
 
-  Future<void> addRemoteAndLocalConversationsMark() async {}
+  Future<void> addRemoteAndLocalConversationsMark() async {
+    try {
+      await EMClient.getInstance.chatManager.addRemoteAndLocalConversationsMark(
+        conversationIds: ['du002'],
+        mark: ConversationMarkType.Type10,
+      );
+      debugPrint('add remote and local conversations mark success');
+    } catch (e) {
+      debugPrint(e.toString());
+    }
+  }
 
-  Future<void> deleteRemoteAndLocalConversationsMark() async {}
+  Future<void> deleteRemoteAndLocalConversationsMark() async {
+    try {
+      await EMClient.getInstance.chatManager
+          .deleteRemoteAndLocalConversationsMark(
+        conversationIds: ['du002'],
+        mark: ConversationMarkType.Type10,
+      );
+      debugPrint('remove remote and local conversations mark success');
+    } catch (e) {
+      debugPrint(e.toString());
+    }
+  }
 
-  Future<void> fetchConversationsByOptions() async {}
+  Future<void> fetchConversationsByOptions() async {
+    try {
+      await EMClient.getInstance.chatManager.fetchConversationsByOptions(
+        options: ConversationFetchOptions(cursor: 'cursor', pageSize: 10),
+      );
+      debugPrint('fetch conversations by options success');
+    } catch (e) {
+      debugPrint(e.toString());
+    }
+  }
 
   Future<void> deleteAllMessageAndConversation() async {}
 
   Future<void> pinMessage() async {
     try {
       await EMClient.getInstance.chatManager
-          .pinMessage(messageId: '1388018655157028368');
+          .pinMessage(messageId: '1389072439916365328');
       debugPrint('pin message success');
     } catch (e) {
       debugPrint(e.toString());
@@ -479,7 +717,7 @@ class ChatPage extends ItemsPage {
   Future<void> unpinMessage() async {
     try {
       await EMClient.getInstance.chatManager
-          .unpinMessage(messageId: '1388018655157028368');
+          .unpinMessage(messageId: '1389072439916365328');
       debugPrint('unpin message success');
     } catch (e) {
       debugPrint(e.toString());
@@ -500,12 +738,14 @@ class ChatPage extends ItemsPage {
 
   Future<void> searchMsgByOptions() async {}
 
-  Future<void> getMessageCount() async {
+  Future<Object?> getMessageCount() async {
     try {
       final count = await EMClient.getInstance.chatManager.getAllMessageCount();
       debugPrint('message count: $count');
+      return count;
     } catch (e) {
       debugPrint(e.toString());
     }
+    return null;
   }
 }

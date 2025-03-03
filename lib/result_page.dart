@@ -10,10 +10,17 @@ class ResultPage extends StatefulWidget {
 class _ResultPageState extends State<ResultPage> {
   @override
   Widget build(BuildContext context) {
+    String result = widget.result.toString();
+    int count = 0;
+    if (widget.result is List) {
+      count = (widget.result as List).length;
+      result = "count: $count, $result";
+    }
+
     return Scaffold(
       appBar: AppBar(),
       body: Center(
-        child: Text(widget.result.toString()),
+        child: Text(result),
       ),
     );
   }
