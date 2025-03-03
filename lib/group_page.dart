@@ -11,69 +11,75 @@ class GroupPage extends ItemsPage {
 
   @override
   List<Item>? get items => [
-        Item(title: 'getGroupWithId', onTap: getGroupWithId),
-        Item(title: 'getJoinedGroups', onTap: getJoinedGroups),
+        Item(title: 'getGroupWithId: Y', onTap: getGroupWithId),
+        Item(title: 'getJoinedGroups: Y', onTap: getJoinedGroups),
         Item(
-            title: 'getJoinedGroupsFromServer',
+            title: 'getJoinedGroupsFromServer: Y',
             onTap: getJoinedGroupsFromServer),
         Item(
-            title: 'getPublicGroupsFromServer',
+            title: 'getPublicGroupsFromServer: Y',
             onTap: getPublicGroupsFromServer),
-        Item(title: 'createGroup', onTap: createGroup),
+        Item(title: 'createGroup: Y', onTap: createGroup),
         Item(
-            title: 'getGroupSpecificationFromServer',
+            title: 'getGroupSpecificationFromServer: Y',
             onTap: getGroupSpecificationFromServer),
         Item(
-            title: 'getGroupMemberListFromServer',
+            title: 'getGroupMemberListFromServer: Y',
             onTap: getGroupMemberListFromServer),
         Item(
-            title: 'getGroupMuteListFromServer',
+            title: 'getGroupMuteListFromServer: Y',
             onTap: getGroupMuteListFromServer),
         Item(
-            title: 'getGroupWhiteListFromServer',
+            title: 'getGroupWhiteListFromServer: Y',
             onTap: getGroupWhiteListFromServer),
         Item(
-            title: 'isMemberInWhiteListFromServer',
+            title: 'isMemberInWhiteListFromServer: Y',
             onTap: isMemberInWhiteListFromServer),
         Item(
-            title: 'getGroupFileListFromServer',
+            title: 'getGroupFileListFromServer: Y',
             onTap: getGroupFileListFromServer),
         Item(
-            title: 'getGroupAnnouncementFromServer',
+            title: 'getGroupAnnouncementFromServer: Y',
             onTap: getGroupAnnouncementFromServer),
         Item(
-            title: 'getGroupBlockListFromServer',
+            title: 'getGroupBlockListFromServer: Y',
             onTap: getGroupBlockListFromServer),
-        Item(title: 'addMembers', onTap: addMembers),
-        Item(title: 'inviterUser', onTap: inviterUser),
-        Item(title: 'removeMembers', onTap: removeMembers),
-        Item(title: 'blockMembers', onTap: blockMembers),
-        Item(title: 'unblockMembers', onTap: unblockMembers),
-        Item(title: 'updateGroupSubject', onTap: updateGroupSubject),
-        Item(title: 'updateDescription', onTap: updateDescription),
-        Item(title: 'leaveGroup', onTap: leaveGroup),
-        Item(title: 'destroyGroup', onTap: destroyGroup),
-        Item(title: 'blockGroup', onTap: blockGroup),
-        Item(title: 'unblockGroup', onTap: unblockGroup),
-        Item(title: 'updateGroupOwner', onTap: updateGroupOwner),
-        Item(title: 'addAdmin', onTap: addAdmin),
-        Item(title: 'removeAdmin', onTap: removeAdmin),
-        Item(title: 'muteMembers', onTap: muteMembers),
-        Item(title: 'unMuteMembers', onTap: unMuteMembers),
-        Item(title: 'muteAllMembers', onTap: muteAllMembers),
-        Item(title: 'unMuteAllMembers', onTap: unMuteAllMembers),
-        Item(title: 'addWhiteList', onTap: addWhiteList),
-        Item(title: 'removeWhiteList', onTap: removeWhiteList),
+        Item(title: 'addMembers: Y', onTap: addMembers),
+        Item(title: 'inviterUser: Y', onTap: inviterUser),
+        Item(title: 'removeMembers: Y', onTap: removeMembers),
+        Item(title: 'blockMembers: Y', onTap: blockMembers),
+        Item(title: 'unblockMembers: Y', onTap: unblockMembers),
+        Item(title: 'updateGroupSubject: Y', onTap: updateGroupSubject),
+        Item(title: 'updateDescription: Y', onTap: updateDescription),
+        Item(title: 'leaveGroup: Y', onTap: leaveGroup),
+        Item(title: 'destroyGroup: Y', onTap: destroyGroup),
+        Item(title: 'blockGroup: Y', onTap: blockGroup),
+        Item(title: 'unblockGroup: Y', onTap: unblockGroup),
+        Item(title: 'updateGroupOwner: Y', onTap: updateGroupOwner),
+        Item(title: 'addAdmin: Y', onTap: addAdmin),
+        Item(title: 'removeAdmin: Y', onTap: removeAdmin),
+        Item(title: 'muteMembers: Y', onTap: muteMembers),
+        Item(title: 'unMuteMembers: Y', onTap: unMuteMembers),
+        Item(title: 'muteAllMembers: Y', onTap: muteAllMembers),
+        Item(title: 'unMuteAllMembers: Y', onTap: unMuteAllMembers),
+        Item(title: 'addWhiteList: Y', onTap: addWhiteList),
+        Item(title: 'removeWhiteList: Y', onTap: removeWhiteList),
         Item(
-            title: 'uploadGroupSharedFile',
+            title: 'uploadGroupSharedFile: Y',
             onContextTap: uploadGroupSharedFile),
-        Item(title: 'downloadGroupSharedFile', onTap: downloadGroupSharedFile),
-        Item(title: 'removeGroupSharedFile', onTap: removeGroupSharedFile),
-        Item(title: 'updateGroupAnnouncement', onTap: updateGroupAnnouncement),
-        Item(title: 'updateGroupExt', onTap: updateGroupExt),
-        Item(title: 'joinPublicGroup', onTap: joinPublicGroup),
+        // 待使用 fileId 095d2510-f80c-11ef-a6d6-eb621e7bfbfe
         Item(
-            title: 'requestToJoinPublicGroup', onTap: requestToJoinPublicGroup),
+            title: 'downloadGroupSharedFile: 未验证',
+            onTap: downloadGroupSharedFile),
+        Item(title: 'removeGroupSharedFile: Y', onTap: removeGroupSharedFile),
+        Item(
+            title: 'updateGroupAnnouncement: Y',
+            onTap: updateGroupAnnouncement),
+        Item(title: 'updateGroupExt', onTap: updateGroupExt),
+        Item(title: 'joinPublicGroup: Y', onTap: joinPublicGroup),
+        Item(
+            title: 'requestToJoinPublicGroup: Y',
+            onTap: requestToJoinPublicGroup),
         Item(title: 'acceptJoinApplication', onTap: acceptJoinApplication),
         Item(title: 'declineJoinApplication', onTap: declineJoinApplication),
         Item(
@@ -82,18 +88,21 @@ class GroupPage extends ItemsPage {
         Item(
             title: 'declineInvitationFromGroup',
             onTap: declineInvitationFromGroup),
-        Item(title: 'setMemberAttributes', onTap: setMemberAttributes),
-        Item(title: 'removeMemberAttributes', onTap: removeMemberAttributes),
-        Item(title: 'fetchMemberAttributes', onTap: fetchMemberAttributes),
-        Item(title: 'fetchMembersAttributes', onTap: fetchMembersAttributes),
-        Item(title: 'fetchJoinedGroupCount', onTap: fetchJoinedGroupCount),
+        Item(title: 'setMemberAttributes: Y', onTap: setMemberAttributes),
+        Item(title: 'removeMemberAttributes: Y', onTap: removeMemberAttributes),
+        Item(title: 'fetchMemberAttributes: Y', onTap: fetchMemberAttributes),
+        Item(title: 'fetchMembersAttributes: Y', onTap: fetchMembersAttributes),
+        Item(title: 'fetchJoinedGroupCount: Y', onTap: fetchJoinedGroupCount),
         Item(title: 'clearAllGroupsFromDB', onTap: clearAllGroupsFromDB),
-        Item(title: 'isMemberInGroupMuteList', onTap: isMemberInGroupMuteList),
+        Item(
+            title: 'isMemberInGroupMuteList: Y',
+            onTap: isMemberInGroupMuteList),
       ];
 
   Future<Object?> getGroupWithId() async {
     try {
-      return await EMClient.getInstance.groupManager.getGroupWithId('groupId');
+      return await EMClient.getInstance.groupManager
+          .getGroupWithId('274297629245443');
     } catch (e) {
       return e;
     }
@@ -147,7 +156,7 @@ class GroupPage extends ItemsPage {
   Future<Object?> getGroupSpecificationFromServer() async {
     try {
       return await EMClient.getInstance.groupManager
-          .fetchGroupInfoFromServer('groupId');
+          .fetchGroupInfoFromServer('274297629245443');
     } catch (e) {
       return e;
     }
@@ -156,8 +165,8 @@ class GroupPage extends ItemsPage {
   Future<Object?> getGroupMemberListFromServer() async {
     try {
       return await EMClient.getInstance.groupManager.fetchMemberListFromServer(
-        'groupId',
-        cursor: "cursor",
+        '274297629245443',
+        cursor: "",
         pageSize: 20,
       );
     } catch (e) {
@@ -168,7 +177,7 @@ class GroupPage extends ItemsPage {
   Future<Object?> getGroupMuteListFromServer() async {
     try {
       return await EMClient.getInstance.groupManager.fetchMuteListFromServer(
-        'groupId',
+        '274297629245443',
         pageNum: 1,
         pageSize: 20,
       );
@@ -180,7 +189,7 @@ class GroupPage extends ItemsPage {
   Future<Object?> getGroupWhiteListFromServer() async {
     try {
       return await EMClient.getInstance.groupManager.fetchAllowListFromServer(
-        'groupId',
+        '274297629245443',
       );
     } catch (e) {
       return e;
@@ -191,7 +200,7 @@ class GroupPage extends ItemsPage {
     try {
       return await EMClient.getInstance.groupManager
           .isMemberInAllowListFromServer(
-        'groupId',
+        '274297629245443',
       );
     } catch (e) {
       return e;
@@ -202,7 +211,7 @@ class GroupPage extends ItemsPage {
     try {
       return await EMClient.getInstance.groupManager
           .fetchGroupFileListFromServer(
-        'groupId',
+        '274297629245443',
         pageNum: 1,
         pageSize: 20,
       );
@@ -213,8 +222,9 @@ class GroupPage extends ItemsPage {
 
   Future<Object?> getGroupAnnouncementFromServer() async {
     try {
-      return await EMClient.getInstance.groupManager
-          .fetchAnnouncementFromServer('groupId');
+      final ret = await EMClient.getInstance.groupManager
+          .fetchAnnouncementFromServer('274297629245443');
+      return ret;
     } catch (e) {
       return e;
     }
@@ -223,7 +233,7 @@ class GroupPage extends ItemsPage {
   Future<Object?> getGroupBlockListFromServer() async {
     try {
       return await EMClient.getInstance.groupManager.fetchBlockListFromServer(
-        'groupId',
+        '274297629245443',
         pageNum: 1,
         pageSize: 20,
       );
@@ -235,7 +245,7 @@ class GroupPage extends ItemsPage {
   Future<Object?> addMembers() async {
     try {
       await EMClient.getInstance.groupManager.addMembers(
-        'groupId',
+        '274297629245443',
         ["du002"],
         welcome: 'hello',
       );
@@ -248,7 +258,7 @@ class GroupPage extends ItemsPage {
   Future<Object?> inviterUser() async {
     try {
       await EMClient.getInstance.groupManager.inviterUser(
-        'groupId',
+        '274297629245443',
         ["du002"],
         reason: 'hello',
       );
@@ -261,7 +271,7 @@ class GroupPage extends ItemsPage {
   Future<Object?> removeMembers() async {
     try {
       await EMClient.getInstance.groupManager.removeMembers(
-        'groupId',
+        '274297629245443',
         ["du002"],
       );
       return true;
@@ -273,8 +283,8 @@ class GroupPage extends ItemsPage {
   Future<Object?> blockMembers() async {
     try {
       await EMClient.getInstance.groupManager.blockMembers(
-        'groupId',
-        ["du002"],
+        '274297629245443',
+        ["du003"],
       );
       return true;
     } catch (e) {
@@ -285,8 +295,8 @@ class GroupPage extends ItemsPage {
   Future<Object?> unblockMembers() async {
     try {
       await EMClient.getInstance.groupManager.unblockMembers(
-        'groupId',
-        ["du002"],
+        '274297629245443',
+        ["du003"],
       );
       return true;
     } catch (e) {
@@ -297,7 +307,7 @@ class GroupPage extends ItemsPage {
   Future<Object?> updateGroupSubject() async {
     try {
       await EMClient.getInstance.groupManager.changeGroupName(
-        'groupId',
+        '274297629245443',
         'newGroupName',
       );
       return true;
@@ -309,7 +319,7 @@ class GroupPage extends ItemsPage {
   Future<Object?> updateDescription() async {
     try {
       await EMClient.getInstance.groupManager.changeGroupDescription(
-        'groupId',
+        '274297629245443',
         'newDescription',
       );
       return true;
@@ -321,7 +331,7 @@ class GroupPage extends ItemsPage {
   Future<Object?> leaveGroup() async {
     try {
       await EMClient.getInstance.groupManager.leaveGroup(
-        'groupId',
+        '274298061258760',
       );
       return true;
     } catch (e) {
@@ -331,8 +341,8 @@ class GroupPage extends ItemsPage {
 
   Future<Object?> destroyGroup() async {
     try {
-      await EMClient.getInstance.groupManager.leaveGroup(
-        'groupId',
+      await EMClient.getInstance.groupManager.destroyGroup(
+        '274017735999493',
       );
       return true;
     } catch (e) {
@@ -343,7 +353,7 @@ class GroupPage extends ItemsPage {
   Future<Object?> blockGroup() async {
     try {
       await EMClient.getInstance.groupManager.blockGroup(
-        'groupId',
+        '274298061258760',
       );
       return true;
     } catch (e) {
@@ -354,7 +364,7 @@ class GroupPage extends ItemsPage {
   Future<Object?> unblockGroup() async {
     try {
       await EMClient.getInstance.groupManager.unblockGroup(
-        'groupId',
+        '274298061258760',
       );
       return true;
     } catch (e) {
@@ -365,8 +375,8 @@ class GroupPage extends ItemsPage {
   Future<Object?> updateGroupOwner() async {
     try {
       await EMClient.getInstance.groupManager.changeOwner(
-        'groupId',
-        'newOwner',
+        '274017595490308',
+        'du002',
       );
       return true;
     } catch (e) {
@@ -377,8 +387,8 @@ class GroupPage extends ItemsPage {
   Future<Object?> addAdmin() async {
     try {
       await EMClient.getInstance.groupManager.addAdmin(
-        'groupId',
-        'admin',
+        '274297629245443',
+        'du002',
       );
       return true;
     } catch (e) {
@@ -389,8 +399,8 @@ class GroupPage extends ItemsPage {
   Future<Object?> removeAdmin() async {
     try {
       await EMClient.getInstance.groupManager.removeAdmin(
-        'groupId',
-        'admin',
+        '274297629245443',
+        'du002',
       );
       return true;
     } catch (e) {
@@ -401,7 +411,7 @@ class GroupPage extends ItemsPage {
   Future<Object?> muteMembers() async {
     try {
       await EMClient.getInstance.groupManager.muteMembers(
-        'groupId',
+        '274297629245443',
         ['du002'],
       );
       return true;
@@ -413,7 +423,7 @@ class GroupPage extends ItemsPage {
   Future<Object?> unMuteMembers() async {
     try {
       await EMClient.getInstance.groupManager.unMuteMembers(
-        'groupId',
+        '274297629245443',
         ['du002'],
       );
       return true;
@@ -425,7 +435,7 @@ class GroupPage extends ItemsPage {
   Future<Object?> muteAllMembers() async {
     try {
       await EMClient.getInstance.groupManager.muteAllMembers(
-        'groupId',
+        '274297629245443',
       );
       return true;
     } catch (e) {
@@ -436,7 +446,7 @@ class GroupPage extends ItemsPage {
   Future<Object?> unMuteAllMembers() async {
     try {
       await EMClient.getInstance.groupManager.unMuteAllMembers(
-        'groupId',
+        '274297629245443',
       );
       return true;
     } catch (e) {
@@ -447,7 +457,7 @@ class GroupPage extends ItemsPage {
   Future<Object?> addWhiteList() async {
     try {
       await EMClient.getInstance.groupManager.addAllowList(
-        'groupId',
+        '274297629245443',
         ['du002'],
       );
       return true;
@@ -459,7 +469,7 @@ class GroupPage extends ItemsPage {
   Future<Object?> removeWhiteList() async {
     try {
       await EMClient.getInstance.groupManager.removeAllowList(
-        'groupId',
+        '274297629245443',
         ['du002'],
       );
       return true;
@@ -475,7 +485,7 @@ class GroupPage extends ItemsPage {
         return "file is null";
       }
       await EMClient.getInstance.groupManager.uploadGroupSharedFile(
-        'groupId',
+        '274297629245443',
         file.path,
       );
       return true;
@@ -487,7 +497,7 @@ class GroupPage extends ItemsPage {
   Future<Object?> downloadGroupSharedFile() async {
     try {
       await EMClient.getInstance.groupManager.downloadGroupSharedFile(
-        groupId: 'groupId',
+        groupId: '274297629245443',
         fileId: 'fileId',
         savePath: 'savePath',
       );
@@ -500,8 +510,8 @@ class GroupPage extends ItemsPage {
   Future<Object?> removeGroupSharedFile() async {
     try {
       await EMClient.getInstance.groupManager.removeGroupSharedFile(
-        'groupId',
-        'fileId',
+        '274297629245443',
+        '370b3ee0-f80a-11ef-ae77-b7cc467eacea',
       );
       return true;
     } catch (e) {
@@ -512,7 +522,7 @@ class GroupPage extends ItemsPage {
   Future<Object?> updateGroupAnnouncement() async {
     try {
       await EMClient.getInstance.groupManager.updateGroupAnnouncement(
-        'groupId',
+        '274297629245443',
         'new announcement',
       );
       return true;
@@ -524,7 +534,7 @@ class GroupPage extends ItemsPage {
   Future<Object?> updateGroupExt() async {
     try {
       await EMClient.getInstance.groupManager.updateGroupExtension(
-        'groupId',
+        '274297629245443',
         'new extension',
       );
       return true;
@@ -536,7 +546,7 @@ class GroupPage extends ItemsPage {
   Future<Object?> joinPublicGroup() async {
     try {
       await EMClient.getInstance.groupManager.joinPublicGroup(
-        'groupId',
+        '274298061258760',
       );
       return true;
     } catch (e) {
@@ -547,7 +557,7 @@ class GroupPage extends ItemsPage {
   Future<Object?> requestToJoinPublicGroup() async {
     try {
       await EMClient.getInstance.groupManager.requestToJoinPublicGroup(
-        'groupId',
+        '274298061258760',
         reason: 'join reason',
       );
       return true;
@@ -608,7 +618,7 @@ class GroupPage extends ItemsPage {
   Future<Object?> setMemberAttributes() async {
     try {
       await EMClient.getInstance.groupManager.setMemberAttributes(
-        groupId: 'groupId',
+        groupId: '274297629245443',
         attributes: {'key': 'value'},
         userId: "du001",
       );
@@ -621,7 +631,7 @@ class GroupPage extends ItemsPage {
   Future<Object?> removeMemberAttributes() async {
     try {
       await EMClient.getInstance.groupManager.removeMemberAttributes(
-        groupId: 'groupId',
+        groupId: '274297629245443',
         keys: ['key'],
         userId: "du001",
       );
@@ -634,7 +644,7 @@ class GroupPage extends ItemsPage {
   Future<Object?> fetchMemberAttributes() async {
     try {
       return await EMClient.getInstance.groupManager.fetchMemberAttributes(
-        groupId: 'groupId',
+        groupId: '274297629245443',
         userId: "du001",
       );
     } catch (e) {
@@ -645,7 +655,7 @@ class GroupPage extends ItemsPage {
   Future<Object?> fetchMembersAttributes() async {
     try {
       return await EMClient.getInstance.groupManager.fetchMembersAttributes(
-        groupId: 'groupId',
+        groupId: '274297629245443',
         userIds: ["du001"],
       );
     } catch (e) {
@@ -672,7 +682,8 @@ class GroupPage extends ItemsPage {
 
   Future<Object?> isMemberInGroupMuteList() async {
     try {
-      return EMClient.getInstance.groupManager.isMemberInGroupMuteList();
+      return EMClient.getInstance.groupManager
+          .isMemberInGroupMuteList('274297629245443');
     } catch (e) {
       return e;
     }

@@ -9,3 +9,11 @@ extension ConversationExtension on EMConversation {
         '"marks": $marks}';
   }
 }
+
+extension ResultExtension on EMCursorResult {
+  String toJsonString() {
+    return '{"cursor": "$cursor",'
+        '"count": ${data.length},'
+        '"data": ${toString()}';
+  }
+}

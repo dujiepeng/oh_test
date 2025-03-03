@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:im_flutter_sdk/im_flutter_sdk.dart';
+import 'package:test_oh/translate_tool.dart';
 
 class ResultPage extends StatefulWidget {
   const ResultPage({this.result, super.key});
@@ -15,6 +17,10 @@ class _ResultPageState extends State<ResultPage> {
     if (widget.result is List) {
       count = (widget.result as List).length;
       result = "count: $count, $result";
+    }
+
+    if (widget.result is EMCursorResult) {
+      result = (widget.result as EMCursorResult).toJsonString();
     }
 
     return Scaffold(
