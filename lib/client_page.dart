@@ -5,6 +5,7 @@ import 'package:test_oh/conversation_page.dart';
 import 'package:test_oh/group_page.dart';
 import 'package:test_oh/item_page.dart';
 import 'package:test_oh/presence_page.dart';
+import 'package:test_oh/userinfo_page.dart';
 
 // ignore: must_be_immutable
 class ClientPage extends ItemsPage {
@@ -19,6 +20,7 @@ class ClientPage extends ItemsPage {
         Item(title: 'chatTest', nextPage: ChatPage()),
         Item(title: 'conversationTest', nextPage: ConversationPage()),
         Item(title: 'presenceTest', nextPage: PresencePage()),
+        Item(title: 'userInfoTest', nextPage: UserInfoPage()),
       ];
 
   @override
