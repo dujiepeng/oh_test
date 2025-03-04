@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:im_flutter_sdk/im_flutter_sdk.dart';
 import 'package:test_oh/chat_page.dart';
+import 'package:test_oh/conversation_page.dart';
 import 'package:test_oh/group_page.dart';
 import 'package:test_oh/item_page.dart';
 
@@ -15,6 +16,7 @@ class ClientPage extends ItemsPage {
         Item(title: 'logout', onTap: logout),
         Item(title: 'groupTest', nextPage: GroupPage()),
         Item(title: 'chatTest', nextPage: ChatPage()),
+        Item(title: 'conversationTest', nextPage: ConversationPage()),
       ];
 
   @override
