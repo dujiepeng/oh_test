@@ -11,10 +11,10 @@ class MessagePage extends ItemsPage {
   @override
   List<Item>? get items => [
         Item(title: 'getMessage', onTap: getMessage),
-        Item(title: 'getReactionList', onTap: getReactionList),
-        Item(title: 'getAckCount', onTap: getAckCount),
+        Item(title: 'getReactionList: Y', onTap: getReactionList),
+        Item(title: 'getAckCount: Y', onTap: getAckCount),
         Item(title: 'getChatThread: X', onTap: getChatThread),
-        Item(title: 'getPinInfo', onTap: getPinInfo),
+        Item(title: 'getPinInfo: Y', onTap: getPinInfo),
       ];
 
   Future<Object?> getMessage() async {

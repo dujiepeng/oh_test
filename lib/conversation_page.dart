@@ -13,22 +13,22 @@ class ConversationPage extends ItemsPage {
   @override
   List<Item>? get items => [
         Item(title: 'getConversation', onTap: getConversation),
-        Item(title: 'getUnreadMsgCount', onTap: getUnreadMsgCount),
-        Item(title: 'markAllMessagesAsRead', onTap: markAllMessagesAsRead),
-        Item(title: 'markMessageAsRead', onTap: markMessageAsRead),
+        Item(title: 'getUnreadMsgCount: Y', onTap: getUnreadMsgCount),
+        Item(title: 'markAllMessagesAsRead: Y', onTap: markAllMessagesAsRead),
+        Item(title: 'markMessageAsRead: Y', onTap: markMessageAsRead),
         Item(title: 'syncConversationExt: Y', onTap: syncConversationExt),
         Item(title: 'removeMessage: Y', onTap: removeMessage),
         Item(title: 'deleteMessageByIds: Y', onTap: deleteMessageByIds),
         Item(title: 'getLatestMessage: Y', onTap: getLatestMessage),
         Item(
-            title: 'getLatestMessageFromOthers',
+            title: 'getLatestMessageFromOthers: Y',
             onTap: getLatestMessageFromOthers),
         Item(title: 'clearAllMessages: Y', onTap: clearAllMessages),
         Item(title: 'deleteMessagesWithTs: X', onTap: deleteMessagesWithTs),
         Item(title: 'insertMessage: Y', onTap: insertMessage),
         Item(title: 'appendMessage: Y', onTap: appendMessage),
         Item(
-            title: 'updateConversationMessage',
+            title: 'updateConversationMessage: Y',
             onTap: updateConversationMessage),
         Item(title: 'loadMsgWithId: Y', onTap: loadMsgWithId),
         Item(title: 'loadMsgWithStartId: Y', onTap: loadMsgWithStartId),
@@ -42,7 +42,7 @@ class ConversationPage extends ItemsPage {
         Item(
             title: 'removeMsgFromServerWithTimeStamp: Y',
             onTap: removeMsgFromServerWithTimeStamp),
-        Item(title: 'pinnedMessages', onTap: pinnedMessages),
+        Item(title: 'pinnedMessages: Y', onTap: pinnedMessages),
         Item(title: 'remindType: Y', onTap: remindType),
         Item(title: 'searchMsgByOptions: Y', onTap: searchMsgByOptions),
         Item(title: 'getLocalMessageCount: Y', onTap: getLocalMessageCount),
@@ -262,13 +262,21 @@ class ConversationPage extends ItemsPage {
           .getConversation(conversationId);
       if (conv != null) {
         // Example message, replace with actual message
-        EMMessage message = EMMessage.createTxtSendMessage(
-            targetId: conversationId,
-            content: 'update message',
-            chatType: ChatType.Chat);
-        await conv.updateMessage(message);
-        debugPrint('Message updated.');
-        return message.toJson();
+        final message = await conv.latestMessage();
+        if (message != null) {
+          // Judge whether the message is a text message
+          if (message.body is EMTextMessageBody) {
+            final textBody = message.body as EMTextMessageBody;
+            final textBody2 = EMTextMessageBody(content: 'Updated message');
+            final content = textBody.content;
+            debugPrint('Message updated before. content: $content');
+            message.body = textBody2;
+            await conv.updateMessage(message);
+            debugPrint('Message updated.');
+            return message.toJson();
+          }
+        }
+        return null;
       }
     } catch (e) {
       debugPrint('Error updating conversation message: $e');
@@ -390,8 +398,9 @@ class ConversationPage extends ItemsPage {
       final conv = await EMClient.getInstance.chatManager
           .getConversation(conversationId);
       final messages = await conv?.loadPinnedMessages();
-      debugPrint('Pinned Messages: ${messages?.length}');
-      return messages?.length;
+      debugPrint(
+          'Pinned Messages: ${messages?.map((msg) => msg.toJson()).toList()}');
+      return messages?.map((msg) => msg.toJson()).toList();
     } catch (e) {
       debugPrint('Error getting pinned messages: $e');
     }
