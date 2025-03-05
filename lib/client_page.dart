@@ -1,8 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:im_flutter_sdk/im_flutter_sdk.dart';
 import 'package:test_oh/chat_page.dart';
+import 'package:test_oh/conversation_page.dart';
 import 'package:test_oh/group_page.dart';
 import 'package:test_oh/item_page.dart';
+import 'package:test_oh/presence_page.dart';
+import 'package:test_oh/push_page.dart';
+import 'package:test_oh/userinfo_page.dart';
 
 // ignore: must_be_immutable
 class ClientPage extends ItemsPage {
@@ -15,6 +19,10 @@ class ClientPage extends ItemsPage {
         Item(title: 'logout', onTap: logout),
         Item(title: 'groupTest', nextPage: GroupPage()),
         Item(title: 'chatTest', nextPage: ChatPage()),
+        Item(title: 'conversationTest', nextPage: ConversationPage()),
+        Item(title: 'presenceTest', nextPage: PresencePage()),
+        Item(title: 'userInfoTest', nextPage: UserInfoPage()),
+        Item(title: 'pushManagerTest', nextPage: PushManagerPage()),
       ];
 
   @override
