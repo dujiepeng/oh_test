@@ -4,6 +4,7 @@ import 'package:test_oh/chat_page.dart';
 import 'package:test_oh/conversation_page.dart';
 import 'package:test_oh/group_page.dart';
 import 'package:test_oh/item_page.dart';
+import 'package:test_oh/message_page.dart';
 import 'package:test_oh/presence_page.dart';
 import 'package:test_oh/push_page.dart';
 import 'package:test_oh/userinfo_page.dart';
@@ -23,6 +24,7 @@ class ClientPage extends ItemsPage {
         Item(title: 'presenceTest', nextPage: PresencePage()),
         Item(title: 'userInfoTest', nextPage: UserInfoPage()),
         Item(title: 'pushManagerTest', nextPage: PushManagerPage()),
+        Item(title: 'messageTest', nextPage: MessagePage()),
       ];
 
   @override
